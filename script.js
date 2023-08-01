@@ -13,13 +13,17 @@ window.onload = eraseTwitter() //
 // Esercizio 2:
 // Crea con JavaScript la funzionalità per rimuovere il corrispondente elemento padre dal DOM cliccando sul link "Continua a leggere".
 
-function showAuthor() {
+function removeFather(){
+    document.addEventListener('DOMContentLoaded', function() {
+        let clickableElements = document.querySelectorAll('.stretched-link');
 
-    let authors = document.querySelectorAll(".blog-post-meta a").innerText
+        clickableElements.forEach(function(element) {
+            element.addEventListener('click', function(event) {
+                event.target.parentNode.remove();
+            });
+        });
+    });
 }
-
-console.log(showAuthor()) //
-
 
 // Esercizio 3:
 // Crea con JavaScript la funzionalità per creare un alert col nome dell'autore ogni volta che il cursore passa sopra l'autore del post.
